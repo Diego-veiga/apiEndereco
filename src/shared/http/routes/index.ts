@@ -1,3 +1,4 @@
+import contriesRouter from '@modules/countries/routers/contries.router';
 import passwordRouter from '@modules/users/routes/password.routes';
 import profileRouter from '@modules/users/routes/profile.routes';
 import sessionRoute from '@modules/users/routes/sessions.routes';
@@ -10,5 +11,6 @@ routes.use('/users', usersRoute);
 routes.use('/session', sessionRoute);
 routes.use('/password', passwordRouter);
 routes.use('/profile', profileRouter);
+routes.use('/contries', contriesRouter);
 
 export default routes;
