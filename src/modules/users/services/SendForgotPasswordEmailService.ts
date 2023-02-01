@@ -39,7 +39,5 @@ export default class SendForgotPasswordEmailService {
         },
       },
     });
-
-    console.log(token);
   }
 }
