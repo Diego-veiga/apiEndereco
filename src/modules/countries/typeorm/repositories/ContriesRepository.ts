@@ -10,4 +10,11 @@ export default class ContriesRepository extends Repository<Contries> {
       },
     });
   }
+  async findById(id: string): Promise<Contries | undefined> {
+    return await this.findOne({
+      where: {
+        id,
+      },
+    });
+  }
 }
