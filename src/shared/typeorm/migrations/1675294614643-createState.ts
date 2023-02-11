@@ -26,6 +26,16 @@ export class createState1675294614643 implements MigrationInterface {
             type: 'boolean',
             default: true,
           },
+          {
+            name: 'created_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
+          {
+            name: 'updated_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
         ],
       }),
     );

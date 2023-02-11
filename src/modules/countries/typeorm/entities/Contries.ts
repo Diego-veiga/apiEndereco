@@ -1,7 +1,9 @@
+import States from '@modules/states/typeorm/entities/states';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -12,6 +14,8 @@ export default class Contries {
   id: string;
   @Column()
   name: string;
+  @OneToMany(() => States, states => states.contry)
+  states: States[];
   @CreateDateColumn()
   created_at: Date;
 
