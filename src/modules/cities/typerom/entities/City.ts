@@ -1,21 +1,24 @@
-import States from '../../../states/typeorm/entities/states';
+import States from '@modules/states/typeorm/entities/states';
+
 import {
   Column,
   CreateDateColumn,
-  Entity,
-  OneToMany,
+  JoinColumn,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity('contries')
-export default class Contries {
+export default class City {
   @PrimaryGeneratedColumn('uuid')
   id: string;
   @Column()
   name: string;
-  @OneToMany(() => States, states => states.contry)
-  states: States[];
+  @Column()
+  active: boolean;
+  @ManyToOne(() => States, states => states.cities)
+  @JoinColumn({ name: 'state_id' })
+  state: States;
   @CreateDateColumn()
   created_at: Date;
 
