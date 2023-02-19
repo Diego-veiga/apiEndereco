@@ -1,5 +1,5 @@
-import { EntityRepository, Repository } from 'typeorm';
 import City from '../entities/City';
+import { EntityRepository, Repository } from 'typeorm';
 
 interface IState {
   id: string;

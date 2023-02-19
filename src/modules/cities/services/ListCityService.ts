@@ -1,6 +1,6 @@
 import { getCustomRepository } from 'typeorm';
-import City from '../typerom/entities/City';
-import CitiesRepository from '../typerom/repositories/CitiesRepository';
+import City from '../typeorm/entities/City';
+import CitiesRepository from '../typeorm/repositories/CitiesRepository';
 
 export default class ListCityService {
   async execute(): Promise<City[]> {

@@ -1,8 +1,8 @@
 import StatesRepository from '@modules/states/typeorm/repositories/StatesRepository';
 import AppError from '@shared/errors/AppError';
 import { getCustomRepository } from 'typeorm';
-import City from '../typerom/entities/City';
-import CitiesRepository from '../typerom/repositories/CitiesRepository';
+import City from '../typeorm/entities/City';
+import CitiesRepository from '../typeorm/repositories/CitiesRepository';
 
 interface IRequest {
   id: string;
@@ -34,6 +34,6 @@ export default class UpdateCityService {
     city.name = name;
     city.state = stateExist;
 
-    return await statesRepository.save(city);
+    return await cityRepository.save(city);
   }
 }

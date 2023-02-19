@@ -28,11 +28,6 @@ export default class StatesRepository extends Repository<States> {
   }
 
   async createState({ name, abbreviation, contry }: IRequest): Promise<States> {
-    console.log('{ name, abbreviation, contry }', {
-      name,
-      abbreviation,
-      contry,
-    });
     const state = await this.create({ name, abbreviation, contry });
 
     await this.save(state);

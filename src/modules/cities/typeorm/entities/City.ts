@@ -1,14 +1,16 @@
-import States from '@modules/states/typeorm/entities/states';
+import States from '../../../states/typeorm/entities/states';
 
 import {
   Column,
   CreateDateColumn,
+  Entity,
   JoinColumn,
   ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
+@Entity('cities')
 export default class City {
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -16,7 +18,7 @@ export default class City {
   name: string;
   @Column()
   active: boolean;
-  @ManyToOne(() => States, states => states.cities)
+  @ManyToOne(() => States, States => States.cities)
   @JoinColumn({ name: 'state_id' })
   state: States;
   @CreateDateColumn()

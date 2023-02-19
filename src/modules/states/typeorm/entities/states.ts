@@ -1,3 +1,5 @@
+import City from '../../../cities/typeorm/entities/City';
+import Contries from '../../../countries/typeorm/entities/Contries';
 import {
   Column,
   CreateDateColumn,
@@ -8,8 +10,6 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import City from '@modules/cities/typerom/entities/City';
-import Contries from '../../../countries/typeorm/entities/Contries';
 
 @Entity('states')
 export default class States {
@@ -23,7 +23,7 @@ export default class States {
   @JoinColumn({ name: 'contry_id' })
   contry: Contries;
 
-  @OneToMany(() => City, cities => cities.state)
+  @OneToMany(() => City, city => city.state)
   cities: City[];
   @Column()
   active: boolean;

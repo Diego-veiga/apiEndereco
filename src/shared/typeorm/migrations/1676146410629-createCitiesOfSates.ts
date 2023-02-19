@@ -7,7 +7,7 @@ export class createCitiesOfSates1676146410629 implements MigrationInterface {
       new TableForeignKey({
         name: 'CitiesOfState',
         columnNames: ['state_id'],
-        referencedTableName: 'contries',
+        referencedTableName: 'states',
         referencedColumnNames: ['id'],
         onDelete: 'SET NULL',
         onUpdate: 'SET NULL',
