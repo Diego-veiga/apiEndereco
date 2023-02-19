@@ -1,3 +1,4 @@
+import citiesRouter from '@modules/cities/routers/cities.router';
 import contriesRouter from '@modules/countries/routers/contries.router';
 import stateRouter from '@modules/states/routers/states.router';
 import passwordRouter from '@modules/users/routes/password.routes';
@@ -14,5 +15,6 @@ routes.use('/password', passwordRouter);
 routes.use('/profile', profileRouter);
 routes.use('/contries', contriesRouter);
 routes.use('/states', stateRouter);
+routes.use('/cities', citiesRouter);
 
 export default routes;
